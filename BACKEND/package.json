@@ -4,10 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-<<<<<<<< HEAD:BACKEND/package.json
-========
-    "cors": "^2.8.5",
->>>>>>>> 1685585d6b3e996f97bf0252106469ae74fbd614:Backend/package.json
-    "express": "^5.1.0"
+  "cors": "^2.8.5",
+  "express": "^5.1.0"
   }
 }

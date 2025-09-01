@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <h1 class="title">Atualizar Usuário</h1>  
+  <div class="forms">
+        <form class="container" onsubmit="userCreate(event)">
+            <div class="mb-3">
+              <label for="nome" class="form-label">Nome do Usuário</label>
+              <input type="text" class="form-control" id="nome" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="idade" class="form-label">Idade</label>
+                <input type="number" class="form-control" id="idade">
+            </div>
+            <div class="mb-3">
+              <label for="senha" class="form-label">Senha</label>
+              <input type="password" class="form-control" id="senha">
+            </div>
+            <div>
+                <a href="/frontend/index.html"><button class="btn btn-secondary" id="botoes">Voltar</button></a>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

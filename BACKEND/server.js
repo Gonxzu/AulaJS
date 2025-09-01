@@ -1,8 +1,6 @@
 const express = require('express'); // Importa o Express
-<<<<<<<< HEAD:BACKEND/server.js
-========
+
 const cors = require('cors'); // Importa o CORS
->>>>>>>> 1685585d6b3e996f97bf0252106469ae74fbd614:Backend/server.js
 
 const app = express(); //Cria o servidor
 
@@ -10,15 +8,15 @@ const port = 3000; //Variavel para armazenar a porta
 
 //Para permitir receber json nas requisições
 app.use(express.json());
-<<<<<<<< HEAD:BACKEND/server.js
-========
+
 app.use(cors());
->>>>>>>> 1685585d6b3e996f97bf0252106469ae74fbd614:Backend/server.js
 
 const usuarios = [
     { "id": 1, "nome": "Otavio", "idade": 20, "senha": "123" },
     { "id": 2, "nome": "Admin", "idade": 20, "senha": "1234" }
 ]
+
+let nextID = 3;
 
 //request - requisição
 //response - respota
@@ -50,7 +48,7 @@ app.get("/usuarios/:id", (req, res) => {
 app.post("/usuarios", (req, res) => {
     //body - corpo da requisição
     const novoUsuario = req.body;
-    novoUsuario.id = usuarios.length + 1;
+    novoUsuario.id = nextID ++;
     usuarios.push(novoUsuario);
 
     res.status(201).send(novoUsuario)

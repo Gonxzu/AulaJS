@@ -1,28 +1,37 @@
 
-    function cadastroUsuario(event){
-        event.preventDefault();
+function cadastroUsuario(event) {
+    event.preventDefault();
 
-        console.log(event);
-        console.log(event.target)
+    let nome = event.target.nome.value;
+    let idade = event.target.idade.value;
+    let senha = event.target.senha.value;
 
-    }
+    fetch('http://localhost:3000/usuarios', {
 
-// fetch('http://localhost:3000/usuarios', {
+        method: 'POST',
 
-//    method: 'POST',
+        headers: {
 
-//    headers: {
+            'Content-Type': 'application/json'
 
-//        'Content-Type': 'application/json'
+        },
 
-//    },
+        body: JSON.stringify({
+            "nome": nome,
+            "idade": idade,
+            "senha": senha
+        })
 
-//    body: JSON.stringify(data)
+    })
 
-//})
+        .then(response => response.json())
 
-//    .then(response => response.json())
+        .then(dados => {
+            console.log(dados)
+            alert("Usuario cadastrado com Sucesso");
+            window.location.href("../index.html")
+        })
 
-//    .then(data => console.log(data))
+        .catch(error => console.log(error));
+}
 
-//    .catch(error => console.log(error));
