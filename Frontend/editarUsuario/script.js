@@ -7,11 +7,20 @@ let senha = document.getElementById("senha");
 
 
 document.addEventListener("DOMContentLoaded", () => {
+    let nome = document.getElementById("nome");
+    let idade = document.getElementById("idade");
+    let senha = document.getElementById("senha");
+
     fetch('https://localhost:3000/usuarios/${usuarioId}')
 
     .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        nome.value = data.nome;
+        idade.value = data.idade;
+        senha.value = data.senha;
 
-    .then(data => console.log(data))
+})
 
     .catch(error => console.log(error));
 
@@ -19,7 +28,11 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 function atualizarUsuario(event){
-    event.preven
+    event.preventDefault();
+
+    const nome = document.getElementById("nome");
+    const idade = document.getElementById("idade");
+    const senha = document.getElementById("senha");
 
     fetch('https://localhost:3000/usuarios/${usuarioId}', {
     
@@ -41,7 +54,11 @@ function atualizarUsuario(event){
     
         .then(response => response.json())
     
-        .then(data => console.log(data))
+        .then(data => {
+            console.log(data);
+            alert(`Usuario ${usuarioID} foi atualizado com sucesso`);
+            window.location.href = "../index.html";
+        })
     
         .catch(error => console.log(error));
 
